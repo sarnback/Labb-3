@@ -1,0 +1,129 @@
+Front End del klar
+	Bundit vyer 
+
+KLASSER
+
+KLASS QUESTIONS	
+	public string Statement { get; }
+	public string[] Answers { get; }
+	public readonly int CorrectAnswer { get; }
+
+KLASS QUIZ
+	public ICollection Questions { get; }
+	public string Title { get; }
+	public Question GetRandomQuestion()
+	public void AddQuestion(string statement, params string[] answers, int correctAnser)
+	public void RemoveQuestion(int index)
+
+		
+
+	Play Quiz,
+{ 
+
+	RadioButtons 
+
+		Ska jämföras med alternativa svars alternativ. 1 Svar ska vara rätt
+
+		Alternativ Answer A	
+			Behöver Bindas med Alternative answer A från en <List> av Alternativa svar 
+			Binds även till textbox som tillhör alternativ A
+
+		Alternativ Answer B	
+			Behöver Bindas med Alternative answer B från en <List> av Alternativa svar	
+			Binds även till textbox som tillhör alternativ B
+
+		Alternativ Answer C	
+			Behöver Bindas med Alternative answer C från en <List> av Alternativa svar
+			Binds även till textbox som tillhör alternativ C
+
+		Alternativ Answer D	
+			Behöver Bindas med Alternative answer D från en <List> av Alternativa svar
+			Binds även till textbox som tillhör alternativ D
+	
+		
+
+	TextBox för Frågan(Quesiton)
+	
+		Binds med <List> av Questions 
+
+		
+ALLMÄNT : 
+	Rätt Svar = 1 poäng ( Sen generera ny fråga plus nya svarsalternativ )
+	Fel Svar = Inget poäng ( sen generera ny fråga plus nya svarsalternativ )
+
+	När alla frågor är slut	
+
+	Skriv ut en textbox (kanske en popup?) som visar hur många rätt man hade utav antalet frågor SEN(Avsluta Quiz)
+
+	När man switchar Vy skall Play Quiz Resetas.
+			
+}
+
+
+
+Edit Quiz
+{	
+
+	Text box med fråga från <List> skall kunna gå att ändra och spara(Skriva över)
+
+	RadioButton Edit Question = skall ändra och spara ens ändringar (ALLA FÖR AKTUELL FRÅGA)
+(Sedan visa nästa fråga ur <List> Questions och upprera sig självt)
+	TAR IN USERINPUT
+
+	TextBox alternativ A binds med RadioButton A (Spara ändrat svars alternativ) TAR IN USERINPUT
+	TextBox alternativ B binds med RadioButton B (Spara ändrat svars alternativ) TAR IN USERINPUT
+	TextBox alternativ C binds med RadioButton C (Spara ändrat svars alternativ) TAR IN USERINPUT
+	TextBox alternativ D binds med RadioButton D (Spara ändrat svars alternativ) TAR IN USERINPUT
+
+	
+
+	När man switchar Vy skall Play Quiz Resetas.
+
+}
+
+Create Quiz
+{
+	TextBox - Type Your Question Skall bindas med RadioButton (Add Question)
+	TAR IN USERINPUT
+	
+	Radio Button(Add Question skall spara aktuella ändringar och skirva över aktuella quizfrågor som redan finns)
+	
+	TextBox Alternative Answers A + RadioButton A
+		Skall spara & Skriva över aktuella svarsalternativ på plats Alternative Answers A
+
+	TAR IN USERINPUT	
+
+	TextBox Alternative Answers B + RadioButton B
+		Skall spara & Skriva över aktuella svarsalternativ på plats Alternative Answers B
+
+	TAR IN USERINPUT
+
+	TextBox Alternative Answers C + RadioButton C
+		Skall spara & Skriva över aktuella svarsalternativ på plats Alternative Answers C
+
+	TAR IN USERINPUT
+
+	TextBox Alternative Answers D + RadioButton D
+		Skall spara & Skriva över aktuella svarsalternativ på plats Alternative Answers D
+
+	TAR IN USERINPUT
+
+
+
+}
+
+
+	Skapa Class  Quesitons och en Lista
+	Skapa Class Quiz
+	Skapa QuestionViewModel
+	Skapa QuizViewModel
+
+	Spara aktuell Quiz och frgåor till Json som startas vid start av program
+	
+	
+	
+	
+	
+	
+
+
