@@ -110,6 +110,7 @@ namespace QuizApp.ViewModels
 
     public static class StringExtensions
     {
+        //Kollar så ens svarsalternativ är utav heltal
         public static bool AreDigitsOnly(this string text)
         {
             if (string.IsNullOrEmpty(text))
