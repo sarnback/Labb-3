@@ -17,7 +17,7 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-
+    <!--listvy Namn QuizQUestions-->
         <ListView
             x:Name="QuizQuestions"
             Grid.Row="1"
@@ -39,7 +39,7 @@
                             <ColumnDefinition Width="auto" />
                             <ColumnDefinition Width="auto" />
                         </Grid.ColumnDefinitions>
-
+                        <!--UPPLADDAD BILD TILL FRÅGA-->
                         <Image
                             Grid.Column="0"
                             Width="100"
@@ -47,7 +47,7 @@
                             HorizontalAlignment="Left"
                             VerticalAlignment="Center"
                             Source="{Binding ImgSource}" />
-
+                        <!--FRÅGOR-->
                         <TextBlock
                             Grid.Column="1"
                             Margin="10,0,0,0"
@@ -56,14 +56,14 @@
                             Text="{Binding QuestionText}" />
 
                         <TextBlock Text="{Binding id}" Visibility="Collapsed" />
-
+                        <!--EDIT knapp-->
                         <Button
                             Grid.Column="2"
                             Margin="10,0,0,0"
                             cal:Message.Attach="[Event Click] = [Action EditQuizCommand($source)]"
                             Content="Edit"
                             Style="{StaticResource MaterialDesignOutlinedDarkButton}" />
-
+                        <!--DELETE knapp-->
                         <Button
                             Grid.Column="3"
                             Margin="10,0,0,0"

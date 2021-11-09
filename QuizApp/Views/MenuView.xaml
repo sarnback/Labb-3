@@ -12,7 +12,7 @@
     mc:Ignorable="d">
 
     <Grid>
-
+        <!--BOARDER RUNT MENY-->
         <Border
             Padding="20"
             HorizontalAlignment="Center"
@@ -21,11 +21,11 @@
             CornerRadius="20">
 
             <StackPanel VerticalAlignment="Center">
-
+                <!--SPELA KNAPP-->
                 <Button x:Name="PlayCommand" Content="Play" />
-
+                <!--EDIT KNAPP-->
                 <Button x:Name="EditCommand" Content="Edit Quiz" />
-
+                <!--SKAPA KNAPP-->
                 <Button x:Name="CreateCommand" Content="Create Quiz" />
 
             </StackPanel>

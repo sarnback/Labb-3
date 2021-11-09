@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:QuizApp.Styles">
 
-    <!--#region  Default Btn-->
+    <!--  HÄR ÄR DEFAULT STIL FÖR KNAPPAR x:type Button Bundit mycket i templatebinding  -->
 
     <Style TargetType="{x:Type Button}">
 
@@ -58,6 +58,6 @@
         </Setter>
     </Style>
 
-    <!--#endregion Default btn-->
+
 
 </ResourceDictionary>

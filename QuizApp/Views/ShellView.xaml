@@ -15,7 +15,7 @@
     mc:Ignorable="d">
 
     <Grid>
-
+        <!--BAKGRUNDS BILD TAGEN FRÅN PNG HEMSIDA emoji-->
         <Grid.Background>
             <ImageBrush
                 ImageSource="/Images/emoji-background.png"
@@ -34,7 +34,7 @@
             Margin="5"
             HorizontalAlignment="Right"
             Orientation="Horizontal">
-
+            <!--HEMMENY KNAPP / Sparar ändrignar och tar en tillbaka-->
             <Button
                 x:Name="GOHomeCommand"
                 Width="45"
@@ -47,7 +47,7 @@
                 Command="{Binding SaveCommand}">
 
                 <Button.Content>
-
+                    <!--IKON BILD-->
                     <materialDesign:PackIcon
                         Width="30"
                         Height="30"
@@ -58,7 +58,7 @@
 
                 </Button.Content>
             </Button>
-
+            <!--TÅTILLBAKA KNAPP  sparar ändringar-->
             <Button
                 x:Name="GOBackCommand"
                 Width="45"
@@ -71,7 +71,7 @@
                 Command="{Binding SaveCommand}">
 
                 <Button.Content>
-
+                    <!--MATERIALDESIGN IKON-->
                     <materialDesign:PackIcon
                         Width="30"
                         Height="30"

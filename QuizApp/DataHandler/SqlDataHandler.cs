@@ -10,6 +10,12 @@ using System.Linq;
 
 namespace QuizApp.DataHandler
 {
+    //SQLite är filbaserad vilket innebär att hela databasen finns lagrad i en enda fil på disk.
+    //Vill man flytta databasen så räcker det att flytta filen.
+    //Det behövs ingen särskild konfiguration av användare och lösenord. Enkelheten är en av fördelarna med en filbaserad databas.
+
+    //Tanken var att kunna spara ALLT I JSON Men jag ville kolla lite närmre på SQL och detta är ju  SQLite som är filbaserad vilket innebär att hela databasen finns lagrad i en enda fil på disk.
+    //Vill man flytta databasen så räcker det att flytta filen.
     class SqlDataHandler
     {
         string DirName = Environment.ExpandEnvironmentVariables(@"%LOCALAPPDATA%");
@@ -24,7 +30,7 @@ namespace QuizApp.DataHandler
         }
 
 
-        //Create a new SQLITE DB if it doesn't exists 
+       //Skapa en ny SQLITE DB om den inte finns
         private void CreateDB()
         {
             if (!File.Exists(ConnName))
@@ -44,9 +50,9 @@ namespace QuizApp.DataHandler
                 var command = new SQLiteCommand(sqlcommand, dbConnection);
                 command.ExecuteNonQuery();
             }
-        }//
+        }
 
-        // Get QuizQuestions
+        // hämta quiz frågor, av lista Quesitons 
         public async Task<List<Questions>> LoadQuiz()
         {
             var questions = new List<Questions>();
@@ -60,7 +66,7 @@ namespace QuizApp.DataHandler
             return questions;
         }
 
-        //Add New Quiz
+        //Lägg till nytt quiz+ frågor answers bilder
         public void AddNewQuiz(Questions questions)
         {
             using (IDbConnection connection = new SQLiteConnection(ConnectionString))
@@ -69,7 +75,7 @@ namespace QuizApp.DataHandler
             }
         }
 
-        //Update Quiz
+        //Uppdaterar quiz när man skapar eller editerar
         public void UpdateQuiz(Questions questions)
         {
             using (IDbConnection connection = new SQLiteConnection(ConnectionString))
@@ -78,7 +84,7 @@ namespace QuizApp.DataHandler
             }
         }
 
-        //Delete Quiz
+        //Ta bort quiz frågor eller quiz efter QUIZ ID
         public void DelteQuiz(int ID)
         {
             using (IDbConnection connection = new SQLiteConnection(ConnectionString))

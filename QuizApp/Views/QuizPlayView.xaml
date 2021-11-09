@@ -57,14 +57,14 @@
                                 <RowDefinition Height="auto" />
                                 <RowDefinition Height="auto" />
                             </Grid.RowDefinitions>
-
+                            <!--VISAR FRÅGEBILD-->
                             <Image
                                 Grid.Row="0"
                                 Width="300"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
                                 Source="{Binding ImgSource}" />
-
+                            <!--HÅLLER QUESTION TEXT-->
                             <TextBlock
                                 Grid.Row="1"
                                 Margin="0"
@@ -75,7 +75,7 @@
                                 FontWeight="Bold"
                                 Foreground="White"
                                 Text="{Binding QuestionText}" />
-
+                            <!--ListVieqw för savarsalternativ-->
                             <ListView
                                 Grid.Row="2"
                                 Margin="0"
@@ -83,7 +83,7 @@
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
                                 ItemsSource="{Binding AnswerList}" />
-
+                            <!--Expandar där man trycker på svar-->
                             <Expander
                                 Grid.Row="3"
                                 Margin="0"

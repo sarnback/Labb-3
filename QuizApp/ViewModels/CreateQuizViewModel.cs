@@ -7,11 +7,15 @@ using System.Windows;
 
 namespace QuizApp.ViewModels
 {
+    //Klass createQUizviewmodel
     public class CreateQuizViewModel : Screen
     {
+        //Field för bild
         private string _imageSource { get; set; }
+        //Sätter ovan field till denna publika prop och när NotifyPropertyChanged
         public string ImageSource { get => _imageSource; set { _imageSource = value; NotifyOfPropertyChange(); } }
 
+        //Korrekt svar 
         private string _correctAnswer { get; set; }
         public string CorrectAnswer
         {
@@ -31,7 +35,7 @@ namespace QuizApp.ViewModels
 
         private bool Edit = false;
         int ID = 0;
-
+        //konstruktor för klassen som kollar om questions = null, om den är det så sker det nedan.
         public CreateQuizViewModel(Questions questions = null)
         {
             if (questions != null)
@@ -44,7 +48,7 @@ namespace QuizApp.ViewModels
                 ID = questions.id;
             }
         }
-
+        //öppnar en dialog box som låter användaren välja en film av file r nedan OM sant sätt Imagesourse till användarens fil
         public void OpenDialogCommand()
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -55,7 +59,7 @@ namespace QuizApp.ViewModels
                 ImageSource = dialog.FileName;
             }
         }
-
+        //Kollar så alla fält är sätta, då jag valt att man måste ha alla dessa krav för skapa en fråga annar skommer messagebox show
         public void CreateCommand()
         {
             if (string.IsNullOrEmpty(Question) || string.IsNullOrEmpty(Answers) ||
@@ -64,7 +68,7 @@ namespace QuizApp.ViewModels
                 MessageBox.Show("one or more fields not set", "Error");
                 return;
             }
-
+            //splittar svar efter ett ","
             var tempString = Answers.Trim().Split(',');
 
             if (CorrectAnswer.Trim() == "0" || !Answers.Contains(",") || Int32.Parse(CorrectAnswer) > tempString.Length)
@@ -81,8 +85,9 @@ namespace QuizApp.ViewModels
                 QuestionText = Question
             };
 
+            //Referens till sqlDatahandler för adda quiz
             var sqlDataHandler = new SqlDataHandler();
-
+            //OM INTE EDIT SÅ sätter vi Answers,correctanswe,quesiton och bild till tomt värde
             if (!Edit)
             {
                 sqlDataHandler.AddNewQuiz(questions);
@@ -92,7 +97,7 @@ namespace QuizApp.ViewModels
                 Question = string.Empty;
                 ImageSource = string.Empty;
             }
-
+            //ANNARS anropa metod UpdateQUiz och säg med messagebox att quiz är uppdaterat
             else
             {
                 questions.id = ID;
